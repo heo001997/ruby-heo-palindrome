@@ -28,6 +28,18 @@ class TestHeoPalindrome < Minitest::Test
   end
 
   def test_letters
-    assert_equal "MadamImAdam", "Madam, I'm Adam.".letters
+    assert_equal "MadamImAdam", "Madam, I'm Adam.".letters_and_numbers
+  end
+
+  def test_integer_non_palindrome
+    refute 12345.palindrome?
+  end
+
+  def test_integer_palindrome
+    assert 12321.palindrome?
+  end
+
+  def test_empty_afterclean_palindrome
+    refute '!'.palindrome?
   end
 end
